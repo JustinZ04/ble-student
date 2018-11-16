@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button attendButton = findViewById(R.id.button2);
-        attendButton.setEnabled(false);
+        //Button attendButton = findViewById(R.id.button2);
+        //attendButton.setEnabled(false);
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
         {
@@ -99,6 +99,12 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         }
+    }
+
+    public void Attend(View view)
+    {
+        Intent activityIntent = new Intent(this, AttendActivity.class);
+        startActivity(activityIntent);
     }
 
     public void dBTest(View view)

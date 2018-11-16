@@ -23,4 +23,5 @@
     <string name="button5">Connect</string>
     <string name="textview" />
     <string name="title_activity_attend">AttendActivity</string>
+    <string name="startScanButton">Attend Lecture</string>
 </resources>

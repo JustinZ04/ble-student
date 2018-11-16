@@ -216,10 +216,6 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_sign_up.xml.flat",
-        "source": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\src\\main\\res\\layout\\content_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple.xml.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\layout\\abc_screen_simple.xml"
     },
@@ -700,10 +696,6 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\color\\mtrl_chip_ripple_color.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
-        "source": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
@@ -922,10 +914,6 @@
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
-    },
-    {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_activity_sign_up.xml.flat",
-        "source": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\src\\main\\res\\layout-v26\\activity_sign_up.xml"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
