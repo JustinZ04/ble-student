@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -28,10 +28,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUp"
-            android:label="@string/title_activity_sign_up"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".AttendActivity"
+            android:label="@string/title_activity_attend"></activity>
     </application>
 
 </manifest>

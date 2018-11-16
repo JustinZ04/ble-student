@@ -1283,6 +1283,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_attend
 layout activity_main
 layout activity_sign_up
 layout content_sign_up
@@ -1386,6 +1387,7 @@ string search_menu_title
 string start_scanning
 string status_bar_notification_info_overflow
 string textview
+string title_activity_attend
 string title_activity_login
 string title_activity_sign_up
 style AlertDialog_AppCompat

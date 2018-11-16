@@ -40,6 +40,9 @@
             android:label="@string/title_activity_sign_up"
             android:parentActivityName="com.example.blescanning.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.blescanning.AttendActivity"
+            android:label="@string/title_activity_attend" />
     </application>
 
 </manifest>

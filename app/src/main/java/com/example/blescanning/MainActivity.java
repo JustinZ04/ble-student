@@ -126,12 +126,6 @@ public class MainActivity extends AppCompatActivity
         queue.add(stringRequest);
     }
 
-    public void doLogin(View view)
-    {
-        Intent loginIntent = new Intent(this, SignUp.class);
-        startActivity(loginIntent);
-    }
-
     public void sendMessage(View view)
     {
         BluetoothManager mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);

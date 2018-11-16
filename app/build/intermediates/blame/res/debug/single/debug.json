@@ -20,12 +20,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_multichoice_material.xml.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_multichoice_material.xml.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\animator_design_fab_hide_motion_spec.xml.flat",
@@ -80,6 +80,10 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_attend.xml.flat",
+        "source": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\src\\main\\res\\layout\\activity_attend.xml"
+    },
+    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
@@ -100,12 +104,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -220,12 +224,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\419bb6ed0564385b000673eed98e0110\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -256,12 +260,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\419bb6ed0564385b000673eed98e0110\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\color_design_error.xml.flat",
@@ -348,12 +352,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\layout-v26\\abc_screen_toolbar.xml"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\layout-v26\\abc_screen_toolbar.xml"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_slow_in.xml.flat",
@@ -468,12 +472,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\color\\mtrl_btn_stroke_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility_off.png.flat",
@@ -516,16 +520,16 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\drawable-xxhdpi-v4\\design_ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_hide_password.xml.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\drawable-v21\\avd_hide_password.xml"
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_hide_password.xml.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -568,12 +572,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -596,12 +600,12 @@
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\809b1d6af572970a79fa48179a653eb7\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\rapto\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b3c7d7d4d6c641ea49af518a64681824\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
