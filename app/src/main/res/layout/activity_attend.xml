@@ -19,7 +19,7 @@
         android:id="@+id/startScanButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="startScan"
+        android:onClick="setScan"
         android:text="@string/startScanButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

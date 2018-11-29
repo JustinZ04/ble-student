@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.example.blescanning.GlobalApp"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
@@ -33,7 +34,15 @@
         <activity
             android:name="com.example.blescanning.AttendActivity"
             android:label="@string/title_activity_attend"
-            android:parentActivityName="com.example.blescanning.MainActivity" >
+            android:parentActivityName="com.example.blescanning.MainActivity" />
+        <activity
+            android:name="com.example.blescanning.ConfirmAttendActivity"
+            android:label="@string/title_activity_confirm_attend"
+            android:parentActivityName="com.example.blescanning.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.blescanning.MainActivity" />
         </activity>
     </application>
 
