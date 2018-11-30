@@ -17,12 +17,15 @@
         completions."
     </string>
     <string name="title_activity_sign_up">SignUp</string>
-    <string name="email">Email</string>
-    <string name="name">Name</string>
     <string name="nid">NID</string>
     <string name="button5">Connect</string>
     <string name="textview" />
     <string name="title_activity_attend">AttendActivity</string>
     <string name="startScanButton">Attend Lecture</string>
     <string name="title_activity_confirm_attend">ConfirmAttendActivity</string>
+    <string name="register">Register</string>
+    <string name="student_id">Student ID</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+
 </resources>
