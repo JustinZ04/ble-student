@@ -9,4 +9,5 @@ public class Constants
     public static int ENABLE_BT_SUCCESS = 1;
     public static final String URL = "https://ble-attendance.herokuapp.com";
     public static final String registerStudent = "/api/students/createStudent/" + APIKeys.APIKey;
+    public static boolean LOGGED_IN = false;
 }

@@ -8,7 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.UUID;
 
@@ -37,10 +44,10 @@ public class RegisterActivity extends AppCompatActivity
 
         requests = SingletonAPICalls.getInstance(this).getRequestQueue();
 
-        /*if(!(SaveSharedPreference.getUUID(RegisterActivity.this).length() == 0)){
+        if(!(SaveSharedPreference.getUUID(RegisterActivity.this).length() == 0)){
             Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
             startActivity(intent);
-        }*/
+        }
 
         register.setOnClickListener(new View.OnClickListener()
         {
@@ -96,6 +103,56 @@ public class RegisterActivity extends AppCompatActivity
 
         easyToast("Cool");
 
+        JSONObject obj = new JSONObject();
+
+        try
+        {
+            obj.put("name", name);
+            obj.put("nid", nid);
+            obj.put("email", email);
+            obj.put("uuid", uuid);
+        }
+        catch (JSONException e)
+        {
+            easyToast("Error with json");
+            return;
+        }
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, obj,
+                new Response.Listener<JSONObject>()
+                {
+                    @Override
+                    public void onResponse(JSONObject response)
+                    {
+                        try {
+
+                            if (response.has("error")) {
+                                easyToast("User not found");
+                            } else {
+                                easyToast("Verified!");
+                                Constants.LOGGED_IN = true;
+                                SaveSharedPreference.setStuNID(RegisterActivity.this, nid);
+                                SaveSharedPreference.setStuUUID(RegisterActivity.this, uuid);
+
+                                Intent loginIntent = new Intent(RegisterActivity.this, DashboardActivity.class);
+                                startActivity(loginIntent);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+                error.printStackTrace();
+                System.out.println(error.getCause().toString());
+                easyToast("Volley Error!");
+            }
+        });
+
+        requests.add(request);
     }
 
 

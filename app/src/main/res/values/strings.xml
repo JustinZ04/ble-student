@@ -27,5 +27,6 @@
     <string name="student_id">Student ID</string>
     <string name="email">Email</string>
     <string name="name">Name</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
 
 </resources>
