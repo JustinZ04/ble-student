@@ -79,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity
     }
 
     private void register(){
-        String url = Constants.URL + Constants.registerStudent;
+        String url = Constants.URL + Constants.REGISTER_STUDENT;
 
         uuid = UUID.randomUUID().toString();
         email = emailform.getText().toString();
@@ -101,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity
             return;
         }
 
-        easyToast("Cool");
+        //easyToast("Cool");
 
         JSONObject obj = new JSONObject();
 
@@ -126,8 +126,8 @@ public class RegisterActivity extends AppCompatActivity
                     {
                         try {
 
-                            if (response.has("error")) {
-                                easyToast("User not found");
+                            if (response.has("Error")) {
+                                easyToast("User already exists");
                             } else {
                                 easyToast("Verified!");
                                 Constants.LOGGED_IN = true;

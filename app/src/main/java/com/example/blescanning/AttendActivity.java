@@ -1,6 +1,8 @@
 package com.example.blescanning;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -11,9 +13,13 @@ import android.bluetooth.le.ScanFilter;
 import android.bluetooth.le.ScanResult;
 import android.bluetooth.le.ScanSettings;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -152,9 +158,22 @@ public class AttendActivity extends AppCompatActivity
 
             if(result.getScanRecord().getServiceUuids().contains(Constants.UUID) && !deviceList.contains(b))
             {
-                Intent confirmAttend = new Intent(AttendActivity.this, ConfirmAttendActivity.class);
+                //Intent confirmAttend = new Intent(AttendActivity.this, ConfirmAttendActivity.class);
                 stopScan();
-                AttendActivity.this.startActivity(confirmAttend);
+                //AttendActivity.this.startActivity(confirmAttend);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(AttendActivity.this);
+                builder.setMessage("Look at this dialog").setCancelable(false).setPositiveButton("Okay", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
             }
 
             Log.d("device", "a result: " + record);
