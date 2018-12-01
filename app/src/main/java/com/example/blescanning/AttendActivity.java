@@ -19,6 +19,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class AttendActivity extends AppCompatActivity
     private ScanCallback mScanCallback;
     private static long SCAN_PERIOD = 15000;
     private Handler mHandler;
+    private FragmentManager fm = getSupportFragmentManager();
     //public ProgressDialog dialog;
 
     @Override
@@ -162,18 +164,8 @@ public class AttendActivity extends AppCompatActivity
                 stopScan();
                 //AttendActivity.this.startActivity(confirmAttend);
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(AttendActivity.this);
-                builder.setMessage("Look at this dialog").setCancelable(false).setPositiveButton("Okay", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i)
-                    {
-                        dialogInterface.dismiss();
-                    }
-                });
-
-                AlertDialog alert = builder.create();
-                alert.show();
+                ConfirmAttendAlertDialogFragment dialogFragment = new ConfirmAttendAlertDialogFragment();
+                dialogFragment.show(fm, "confirmAttend");
             }
 
             Log.d("device", "a result: " + record);
