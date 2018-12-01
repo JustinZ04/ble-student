@@ -38,8 +38,8 @@ public class AlertDialogFragment extends DialogFragment
                 })
                 .setTitle("Location Permission")
                 .setMessage("The location permission is required for bluetooth" +
-                        "to be used. You will not be able to use this app unless the" +
-                        "location permission is granted.")
+                        " to be used. You will not be able to use this app unless the" +
+                        " location permission is granted.")
                 .create();
     }
 }
