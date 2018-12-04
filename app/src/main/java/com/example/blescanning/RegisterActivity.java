@@ -3,6 +3,7 @@ package com.example.blescanning;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -118,6 +119,7 @@ public class RegisterActivity extends AppCompatActivity
             return;
         }
 
+        // Should change this to a StringRequest
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, obj,
                 new Response.Listener<JSONObject>()
                 {
@@ -131,8 +133,14 @@ public class RegisterActivity extends AppCompatActivity
                             } else {
                                 easyToast("Verified!");
                                 Constants.LOGGED_IN = true;
-                                SaveSharedPreference.setStuNID(RegisterActivity.this, nid);
+                                //SaveSharedPreference.setStuNID(RegisterActivity.this, nid);
+                                //Log.v("nid", "after set first" + SaveSharedPreference.getStuNID(RegisterActivity.this));
+                                // Have to set the uuid before the nid i dont know why
                                 SaveSharedPreference.setStuUUID(RegisterActivity.this, uuid);
+                                SaveSharedPreference.setStuNID(RegisterActivity.this, nid);
+                                Log.v("nid", "after set second" + SaveSharedPreference.getStuNID(RegisterActivity.this));
+                                Log.v("nid", "after set get uuid" + SaveSharedPreference.getUUID(RegisterActivity.this));
+                                //Log.v("nid", "after set" + SaveSharedPreference.getStuNID(RegisterActivity.this));
 
                                 Intent loginIntent = new Intent(RegisterActivity.this, DashboardActivity.class);
                                 startActivity(loginIntent);

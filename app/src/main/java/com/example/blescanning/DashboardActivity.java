@@ -11,8 +11,28 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.textclassifier.TextLinks;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity
 {
@@ -21,6 +41,10 @@ public class DashboardActivity extends AppCompatActivity
             Manifest.permission.ACCESS_COARSE_LOCATION
     };
     private FragmentManager fm = getSupportFragmentManager();
+    private RecyclerView recyclerView;
+    private LectureAdapter adapter;
+    private List<Lecture> lectureList;
+    private RequestQueue queue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,12 +54,119 @@ public class DashboardActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        lectureList = new ArrayList<>();
+        queue = SingletonAPICalls.getInstance(this).getRequestQueue();
+
+        //recyclerView = findViewById(R.id.recycler_view);
+        //recyclerView.setHasFixedSize(true);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        loadLectures();
+
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED)
         {
             ActivityCompat.requestPermissions(this, PERMISSIONS,
                     REQUEST_LOCATION_PERMISSION);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+       // getMenuInflater().inflate(R.menu.menu_items, menu);
+
+        return true;
+    }
+
+    /*public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.
+        }
+    }*/
+
+    public void loadLectures()
+    {
+        String getClassIdurl = Constants.URL + Constants.GET_LECTURE_ID + "/" + "ab12345";
+
+        StringRequest request = new StringRequest(Request.Method.GET, getClassIdurl, new Response.Listener<String>()
+        {
+            @Override
+            public void onResponse(String response)
+            {
+                try
+                {
+                    JSONArray lectures = new JSONArray(response);
+
+                    for(int i = 0; i < lectures.length(); i++)
+                    {
+                        Toast.makeText(getApplicationContext(), lectures.get(i).toString(), Toast.LENGTH_LONG);
+                    }
+                }
+                catch (JSONException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
+            /*@Override
+            public void onResponse(String response)
+            {
+                try {
+                    JSONArray lectures = new JSONArray(response);
+
+                    for (int i = 0; i < lectures.length(); i++) {
+                        JSONObject lectureObject = lectures.getJSONObject(i);
+
+                        Lecture newLecture = new Lecture(
+                                lectureObject.getString("_id"),
+                                lectureObject.getString("courseID"),
+                                lectureObject.getString("className"),
+                                lectureObject.getString("startTime"),
+                                lectureObject.getString("createdByProfNID"),
+                                lectureObject.getString("endTime"));
+
+                        lectureList.add(newLecture);
+
+
+                    }
+
+                    adapter = new LectureAdapter(DashboardActivity.this, lectureList);
+                    recyclerView.addItemDecoration(new DividerItemDecoration(DashboardActivity.this, LinearLayoutManager.VERTICAL));
+                    recyclerView.setAdapter(adapter);
+
+                    recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener()
+                    {
+                        @Override
+                        public void onClick(View view, int position)
+                        {
+                            Lecture currentLecture = lectureList.get(position);
+                            Toast.makeText(getApplicationContext(), currentLecture.getName(), Toast.LENGTH_LONG);
+                        }
+
+                        @Override
+                        public void onLongClick(View view, int position)
+                        {
+
+                        }
+                    }));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }*/
+        }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+
+            }
+        });
+
+        queue.add(request);
     }
 
     public void attend(View view)
