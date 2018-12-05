@@ -167,6 +167,7 @@ public class DashboardActivity extends AppCompatActivity
                         try {
                             lectureId.clear();
                             lectureInfo.clear();
+                            lectureList.clear();
                             recyclerView = findViewById(R.id.recycler_view);
                             recyclerView.setHasFixedSize(true);
                             recyclerView.setLayoutManager(new LinearLayoutManager(DashboardActivity.this));
@@ -284,6 +285,7 @@ public class DashboardActivity extends AppCompatActivity
     private void getLectureInfo()
     {
         String url;
+        adapter = new LectureAdapter(DashboardActivity.this, lectureList);
 
         for(int i = 0; i < lectureId.size(); i++)
         {
@@ -317,11 +319,11 @@ public class DashboardActivity extends AppCompatActivity
 
                         //}
 
-                        adapter = new LectureAdapter(DashboardActivity.this, lectureList);
                         recyclerView.addItemDecoration(new DividerItemDecoration(DashboardActivity.this, LinearLayoutManager.VERTICAL));
-                        recyclerView.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                        recyclerView.swapAdapter(adapter, true);
 
-                        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener()
+                        /*recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener()
                         {
                             @Override
                             public void onClick(View view, int position)
@@ -339,7 +341,7 @@ public class DashboardActivity extends AppCompatActivity
                             {
 
                             }
-                        }));
+                        }));*/
                     }
                     catch (JSONException e)
                     {
@@ -357,6 +359,25 @@ public class DashboardActivity extends AppCompatActivity
 
             queue.add(request);
         }
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener()
+        {
+            @Override
+            public void onClick(View view, int position)
+            {
+                Lecture currentLecture = lectureList.get(position);
+                easyToast(currentLecture.getName());
+                Intent intent = new Intent(DashboardActivity.this, ScanActivity.class);
+                intent.putExtra("classID", currentLecture.getCourse_id());
+                intent.putExtra("className", currentLecture.getName());
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick(View view, int position)
+            {
+
+            }
+        }));
     }
 
     public void attend(View view)

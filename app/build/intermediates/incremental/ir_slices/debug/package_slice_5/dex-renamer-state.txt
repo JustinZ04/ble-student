@@ -1,0 +1,4 @@
+#Wed Dec 05 17:01:45 EST 2018
+base.0=C\:\\Users\\rapto\\Documents\\BLE_Student\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+path.0=classes.dex
+renamed.0=classes.dex
