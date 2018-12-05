@@ -359,6 +359,8 @@ public class DashboardActivity extends AppCompatActivity
 
             queue.add(request);
         }
+
+        // Moved out of the for loop
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener()
         {
             @Override
