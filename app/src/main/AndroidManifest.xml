@@ -49,6 +49,7 @@
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ScanActivity"></activity>
     </application>
 
 </manifest>

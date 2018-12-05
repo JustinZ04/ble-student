@@ -328,6 +328,10 @@ public class DashboardActivity extends AppCompatActivity
                             {
                                 Lecture currentLecture = lectureList.get(position);
                                 easyToast(currentLecture.getName());
+                                Intent intent = new Intent(DashboardActivity.this, ScanActivity.class);
+                                intent.putExtra("classID", currentLecture.getCourse_id());
+                                intent.putExtra("className", currentLecture.getName());
+                                startActivity(intent);
                             }
 
                             @Override

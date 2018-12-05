@@ -25,11 +25,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity android:name="com.example.blescanning.MainActivity" >
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity
             android:name="com.example.blescanning.AttendActivity"
@@ -44,6 +47,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.blescanning.MainActivity" />
         </activity>
+        <activity android:name="com.example.blescanning.RegisterActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blescanning.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.example.blescanning.ScanActivity" />
     </application>
 
 </manifest>
