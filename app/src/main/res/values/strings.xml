@@ -29,5 +29,6 @@
     <string name="name">Name</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="attend">Attend</string>
+    <string name="enter_class_code">Enter Class Code</string>
 
 </resources>

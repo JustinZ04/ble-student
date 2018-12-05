@@ -20,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.textclassifier.TextLinks;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -57,6 +59,9 @@ public class DashboardActivity extends AppCompatActivity
     private List<String> lectureId = new ArrayList<>();
     private List<JSONArray> lectureInfo = new ArrayList();
     private boolean lectureListFilled = false;
+    private Button addClass;
+    private EditText regcode;
+    private String regcodestring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -68,6 +73,22 @@ public class DashboardActivity extends AppCompatActivity
 
         lectureList = new ArrayList<>();
         queue = SingletonAPICalls.getInstance(this).getRequestQueue();
+        addClass = findViewById(R.id.addClass);
+        regcode = findViewById(R.id.regCode);
+
+        addClass.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view){
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        addclass();
+                    }
+                }).start();
+
+            }
+        });
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -94,14 +115,83 @@ public class DashboardActivity extends AppCompatActivity
     /*public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId())
-        {
+        { private void easyToast(String string){
+        final String String;
+
+        String = string;
+
+        this.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(RegisterActivity.this, String, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return;
+    }
             case R.id.
         }
     }*/
 
+    private void easyToast(String string){
+        final String String;
+
+        String = string;
+
+        this.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(DashboardActivity.this, String, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return;
+    }
+
+    public void addclass(){
+        regcodestring = regcode.getText().toString();
+        String url = Constants.URL + Constants.ADD_TO_CLASS;
+        JSONObject request = new JSONObject();
+        try{
+            request.put("nid", SaveSharedPreference.getStuNID(DashboardActivity.this));
+            request.put("reg_code", regcodestring);
+        }
+
+        catch(JSONException e)
+        {
+            easyToast("Error try again");
+        }
+
+        JsonObjectRequest classRequest = new JsonObjectRequest(Request.Method.POST, url, request,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            lectureId.clear();
+                            lectureInfo.clear();
+                            recyclerView = findViewById(R.id.recycler_view);
+                            recyclerView.setHasFixedSize(true);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(DashboardActivity.this));
+                            loadLectures();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            easyToast("Error!");
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                easyToast("Error!");
+            }
+        }
+
+        );
+        queue.add(classRequest);
+    }
+
     public void loadLectures()
     {
-        String getClassIdurl = Constants.URL + Constants.GET_LECTURE_ID + "ab12345";
+        String getClassIdurl = Constants.URL + Constants.GET_LECTURE_ID + SaveSharedPreference.getStuNID(DashboardActivity.this);
 
         StringRequest request = new StringRequest(Request.Method.GET, getClassIdurl, new Response.Listener<String>()
         {
@@ -122,10 +212,10 @@ public class DashboardActivity extends AppCompatActivity
                     }
 
                     getLectureInfo();
-                    if(lectureListFilled)
+                   /* if(lectureListFilled)
                     {
                         Log.v("list", lectureInfo.get(0).toString() + "\n" + lectureInfo.get(1).toString() + "\n" + lectureInfo.get(2).toString());
-                    }
+                    }*/
                 }
                 catch (JSONException e)
                 {
@@ -237,7 +327,7 @@ public class DashboardActivity extends AppCompatActivity
                             public void onClick(View view, int position)
                             {
                                 Lecture currentLecture = lectureList.get(position);
-                                Toast.makeText(getApplicationContext(), currentLecture.getName(), Toast.LENGTH_LONG);
+                                easyToast(currentLecture.getName());
                             }
 
                             @Override
