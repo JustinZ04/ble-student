@@ -15,6 +15,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,9 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
@@ -32,7 +36,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class DashboardActivity extends AppCompatActivity
 {
@@ -45,6 +54,9 @@ public class DashboardActivity extends AppCompatActivity
     private LectureAdapter adapter;
     private List<Lecture> lectureList;
     private RequestQueue queue;
+    private List<String> lectureId = new ArrayList<>();
+    private List<JSONArray> lectureInfo = new ArrayList();
+    private boolean lectureListFilled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,9 +69,9 @@ public class DashboardActivity extends AppCompatActivity
         lectureList = new ArrayList<>();
         queue = SingletonAPICalls.getInstance(this).getRequestQueue();
 
-        //recyclerView = findViewById(R.id.recycler_view);
-        //recyclerView.setHasFixedSize(true);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         loadLectures();
 
@@ -89,7 +101,7 @@ public class DashboardActivity extends AppCompatActivity
 
     public void loadLectures()
     {
-        String getClassIdurl = Constants.URL + Constants.GET_LECTURE_ID + "/" + "ab12345";
+        String getClassIdurl = Constants.URL + Constants.GET_LECTURE_ID + "ab12345";
 
         StringRequest request = new StringRequest(Request.Method.GET, getClassIdurl, new Response.Listener<String>()
         {
@@ -99,10 +111,20 @@ public class DashboardActivity extends AppCompatActivity
                 try
                 {
                     JSONArray lectures = new JSONArray(response);
+                    JSONObject o;
 
                     for(int i = 0; i < lectures.length(); i++)
                     {
-                        Toast.makeText(getApplicationContext(), lectures.get(i).toString(), Toast.LENGTH_LONG);
+                        //Toast.makeText(getApplicationContext(), lectures.get(i).toString(), Toast.LENGTH_LONG);
+                        o = lectures.getJSONObject(i);
+                        lectureId.add(o.getString("class_id"));
+                        Log.v("id", lectureId.get(i));
+                    }
+
+                    getLectureInfo();
+                    if(lectureListFilled)
+                    {
+                        Log.v("list", lectureInfo.get(0).toString() + "\n" + lectureInfo.get(1).toString() + "\n" + lectureInfo.get(2).toString());
                     }
                 }
                 catch (JSONException e)
@@ -167,6 +189,80 @@ public class DashboardActivity extends AppCompatActivity
         });
 
         queue.add(request);
+    }
+
+    private void getLectureInfo()
+    {
+        String url;
+
+        for(int i = 0; i < lectureId.size(); i++)
+        {
+            url = Constants.URL + Constants.GET_LECTURE_INFO + lectureId.get(i);
+            StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>()
+            {
+                @Override
+                public void onResponse(String response)
+                {
+                    try
+                    {
+                        JSONArray lecture = new JSONArray(response);
+                        lectureInfo.add(lecture);
+                        Log.v("info", "lecture " + lecture.getJSONObject(0).get("_id"));
+                        Log.v("info", lectureInfo.toString());
+                        lectureListFilled = true;
+
+                        //for (int i = 0; i < lectureInfo.size(); i++) {
+                            JSONArray lectureObject = lectureInfo.get(lectureInfo.size()-1);
+
+                            Lecture newLecture = new Lecture(
+                                    lectureObject.getJSONObject(0).get("_id").toString(),
+                                    lectureObject.getJSONObject(0).get("courseID").toString(),
+                                    lectureObject.getJSONObject(0).get("className").toString(),
+                                    lectureObject.getJSONObject(0).get("startTime").toString(),
+                                    lectureObject.getJSONObject(0).get("endTime").toString(),
+                                    lectureObject.getJSONObject(0).get("createdByProfNID").toString());
+
+                            lectureList.add(newLecture);
+
+
+                        //}
+
+                        adapter = new LectureAdapter(DashboardActivity.this, lectureList);
+                        recyclerView.addItemDecoration(new DividerItemDecoration(DashboardActivity.this, LinearLayoutManager.VERTICAL));
+                        recyclerView.setAdapter(adapter);
+
+                        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener()
+                        {
+                            @Override
+                            public void onClick(View view, int position)
+                            {
+                                Lecture currentLecture = lectureList.get(position);
+                                Toast.makeText(getApplicationContext(), currentLecture.getName(), Toast.LENGTH_LONG);
+                            }
+
+                            @Override
+                            public void onLongClick(View view, int position)
+                            {
+
+                            }
+                        }));
+                    }
+                    catch (JSONException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener()
+            {
+                @Override
+                public void onErrorResponse(VolleyError error)
+                {
+
+                }
+            });
+
+            queue.add(request);
+        }
     }
 
     public void attend(View view)
