@@ -1,16 +1,14 @@
 package com.example.blescanning;
 
-import android.os.ParcelUuid;
-
-public class Constants
+class Constants
 {
-    public static final ParcelUuid UUID = ParcelUuid
-        .fromString("cac426a3-344f-45c8-8819-ebcfe81e4b23");
-    public static int ENABLE_BT_SUCCESS = 1;
-    public static final String URL = "https://ble-attendance.herokuapp.com";
-    public static final String REGISTER_STUDENT = "/api/students/createStudent/";
-    public static final String GET_LECTURE_ID = "/api/students/viewClasses/";
-    public static final String GET_LECTURE_INFO = "/api/classes/viewClass/";
-    public static final String ADD_TO_CLASS = "/api/classes/addToClass";
-    public static boolean LOGGED_IN = false;
+    static int ENABLE_BT_SUCCESS = 1;
+    static final String URL = "https://ble-attendance.herokuapp.com";
+    static final String REGISTER_STUDENT = "/api/students/createStudent/";
+    static final String GET_LECTURE_ID = "/api/students/viewClasses/";
+    static final String GET_LECTURE_INFO = "/api/classes/viewClass/";
+    static final String ADD_TO_CLASS = "/api/classes/addToClass";
+    static final String GET_CURRENT_UUID = "/api/professors/bleuuid/";
+    static final String MARK_ATTENDED = "/api/students/markHere/";
+    static boolean LOGGED_IN = false;
 }

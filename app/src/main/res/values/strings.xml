@@ -30,5 +30,6 @@
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="attend">Attend</string>
     <string name="enter_class_code">Enter Class Code</string>
+    <string name="attend_lecture">Attend Lecture</string>
 
 </resources>

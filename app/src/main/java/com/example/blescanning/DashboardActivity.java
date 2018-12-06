@@ -84,6 +84,7 @@ public class DashboardActivity extends AppCompatActivity
                     @Override
                     public void run() {
                         addclass();
+                        regcode.getText().clear();
                     }
                 }).start();
 
@@ -367,11 +368,12 @@ public class DashboardActivity extends AppCompatActivity
             public void onClick(View view, int position)
             {
                 Lecture currentLecture = lectureList.get(position);
-                easyToast(currentLecture.getName());
-                Intent intent = new Intent(DashboardActivity.this, ScanActivity.class);
-                intent.putExtra("classID", currentLecture.getCourse_id());
-                intent.putExtra("className", currentLecture.getName());
-                startActivity(intent);
+                //easyToast(currentLecture.getName());
+                Intent ScanIntent = new Intent(DashboardActivity.this, ScanActivity.class);
+                ScanIntent.putExtra("classID", currentLecture.getCourse_id());
+                ScanIntent.putExtra("className", currentLecture.getName());
+                ScanIntent.putExtra("ProfNID", currentLecture.getCreatedByProfNID());
+                startActivity(ScanIntent);
             }
 
             @Override
@@ -382,11 +384,11 @@ public class DashboardActivity extends AppCompatActivity
         }));
     }
 
-    public void attend(View view)
+    /*public void attend(View view)
     {
         Intent attendIntent = new Intent(this, AttendActivity.class);
         startActivity(attendIntent);
-    }
+    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults)
